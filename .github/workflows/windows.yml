@@ -32,7 +32,7 @@ jobs:
             msvc_arch: x64
             qt_arch_install: msvc2019_64
     env:
-      targetName: Congratulation.exe
+      targetName: test.exe
     # 步骤
     steps:
       # 安装Qt
@@ -66,7 +66,10 @@ jobs:
           echo winSdkVer=%WindowsSdkVersion% >> %GITHUB_ENV%
           echo vcToolsInstallDir=%VCToolsInstallDir% >> %GITHUB_ENV%
           echo vcToolsRedistDir=%VCToolsRedistDir% >> %GITHUB_ENV%
+          pwd
           cd ..
+          pwd
+          ls -a
       # 打包 
       - name: package
         id: package      
@@ -75,6 +78,11 @@ jobs:
           msvcArch: ${{ matrix.msvc_arch }}          
         shell: pwsh
         run: |
+          pwd
+          ls -a
+          pwd
+          cd .build
+          ls -a
           
           .\scripts\windows-publish.ps1 ${env:archiveName} ${env:targetName}
           # 记录packageName给后续step
