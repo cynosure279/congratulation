@@ -69,7 +69,7 @@ jobs:
           pwd
           cd ..
           pwd
-          ls -a
+          ls
       # 打包 
       - name: package
         id: package      
@@ -79,10 +79,10 @@ jobs:
         shell: pwsh
         run: |
           pwd
-          ls -a
+          ls
           pwd
           cd .build
-          ls -a
+          ls
           
           .\scripts\windows-publish.ps1 ${env:archiveName} ${env:targetName}
           # 记录packageName给后续step
