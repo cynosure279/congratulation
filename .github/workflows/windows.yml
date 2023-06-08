@@ -91,11 +91,11 @@ jobs:
           path: ${{ steps.package.outputs.packageName }}
       # tag 上传Release
       - name: uploadRelease
-        if: startsWith(github.event.ref, 'refs/tags/windows')
+        #if: startsWith(github.event.ref, 'refs/tags/windows')
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: ${{ steps.package.outputs.packageName }}.zip
           asset_name: ${{ steps.package.outputs.packageName }}.zip
-          tag: 'refs/tags/windows'
+          tag: ${{ github.ref }}
           overwrite: true 
