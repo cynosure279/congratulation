@@ -59,7 +59,7 @@ jobs:
           call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" ${{ matrix.msvc_arch }}
           mkdir build 
           cd build
-          cmake ..
+          cmake .. -G "NMake Makefiles"
           nmake
           echo winSdkDir=%WindowsSdkDir% >> %GITHUB_ENV%
           echo winSdkVer=%WindowsSdkVersion% >> %GITHUB_ENV%
