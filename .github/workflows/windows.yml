@@ -23,7 +23,7 @@ jobs:
         include:
           # 5.9.9 参考 https://mirrors.cloud.tencent.com/qt/online/qt
           # 6.2.2
-          - qt_ver: 6.4.2
+          - qt_ver: 6.2.2
             qt_arch: win64_msvc2019_64
             msvc_arch: x64
             qt_arch_install: msvc2019_64
