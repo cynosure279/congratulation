@@ -81,7 +81,7 @@ jobs:
           pwd
           ls
           pwd
-          cd .build
+          cd build
           ls
           
           .\scripts\windows-publish.ps1 ${env:archiveName} ${env:targetName}
