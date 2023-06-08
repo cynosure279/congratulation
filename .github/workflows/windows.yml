@@ -83,7 +83,7 @@ jobs:
           pwd
           cd build
           ls
-          
+          pwd
           .\scripts\windows-publish.ps1 ${env:archiveName} ${env:targetName}
           # 记录packageName给后续step
            $name = ${env:archiveName}
