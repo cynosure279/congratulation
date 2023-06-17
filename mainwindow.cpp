@@ -27,9 +27,9 @@ public:
 
     ~itemWidget() {
         RowNums--;
-        delete layout;
-        delete label;
-        delete checkbox;
+        delete *layout;
+        delete *label;
+        delete *checkbox;
     }
 private:
     int RowNum;   //item row num.
